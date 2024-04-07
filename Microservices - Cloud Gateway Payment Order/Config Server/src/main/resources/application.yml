@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: CONFIG-SERVER
+  cloud:
+    config:
+      discover:
+        enabled: true
+      server:
+        bootstrap: true
+        git:
+          uri: https://github.com/Joshua-Ho-Gwok-Hin/cloud-configuration-server/blob/main/application.yml
+          skipSslValidation: true
+
+server:
+  port: 8888
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
